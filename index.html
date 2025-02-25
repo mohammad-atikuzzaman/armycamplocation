@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Army camp location and Contact</title>
+    <title>Army Camp Location and Contact</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -17,18 +17,32 @@
       crossorigin=""
     ></script>
   </head>
-  <body class="body">
-    <h1 class="bg-blue-500 px-4 py-1 font-semibold text-3xl uppercase text-center border-b-2 border-white text-white">Bd Army camp Location and contact number</h1>
-    <main class="flex">
-      <aside class="bg-blue-500 min-w-[15%] flex flex-col items-center pt-4 border-r-4 border-white">
+  <body class="body bg-gray-100">
+    <h1
+      class="bg-[#00674C] px-4 py-1 font-semibold text-3xl uppercase text-center border-b-2 border-white text-white"
+    >
+      Bd Army Camp Location and Contact Number
+    </h1>
+    <main class="flex flex-col md:flex-row">
+      <aside
+        class="bg-[#00674C] w-full md:w-[20%] flex flex-col items-center pt-4 border-b-2 md:border-r-4 border-white p-4"
+      >
         <button
           id="btn"
-          class="bg-white px-4 py-1 inline-block rounded-md font-semibold"
+          class="bg-white px-4 py-1 inline-block rounded-md font-semibold mb-6"
         >
           Find My Location
         </button>
+        <h3
+          class="md:mt-10 uppercase font-semibold text-lg border-b-2 text-white text-center"
+        >
+          My Location:
+        </h3>
+        <p id="locationContainer" class="text-center mt-2 text-white">
+          Click on the "Find My Location" button
+        </p>
       </aside>
-      <div id="map" class="h-screen w-full"></div>
+      <div id="map" class="h-[60vh] md:h-screen w-full"></div>
     </main>
     <script src="./app.js"></script>
   </body>
