@@ -7,9 +7,8 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 var circle = L.circle([51.508, -0.11], {
-  color: "gray",
   fillColor: "blue",
-  fillOpacity: 0.3,
+  fillOpacity: 0.2,
   radius: 1000,
 }).addTo(map);
 
@@ -30,6 +29,8 @@ function getLocation() {
       var lat = position.coords.latitude;
       var lon = position.coords.longitude;
 
+      console.log(lat, lon);
+
       // Move the circle to the user's current location
       circle.setLatLng([lat, lon]);
 
@@ -48,4 +49,6 @@ function getLocation() {
 }
 
 // Call getLocation to fetch the user's location and update the circle
-getLocation();
+const btn = document.getElementById("btn");
+btn.addEventListener("click", getLocation);
+// getLocation();
