@@ -24,7 +24,6 @@ const armyCamps = async () => {
       .bindPopup(`<b>${camp.name}</b><br>Click for contact number`);
 
     marker.on("click", function () {
-      // Join the contacts array into a string separated by commas
       const contactNumbers = camp.contacts.join(", ");
       marker
         .bindPopup(`<b>${camp.name} সেনাক্যাম্প</b><br>Contact: ${contactNumbers}`)
@@ -48,7 +47,6 @@ function getLocation() {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          // Assuming the API response contains an address field
           var locationName = data.display_name;
           console.log("Location Name: " + locationName);
           locationContainer.innerHTML = locationName;
@@ -57,13 +55,8 @@ function getLocation() {
           console.error("Error retrieving location:", error);
         });
 
-      // Move the circle to the user's current location
       circle.setLatLng([lat, lon]);
-
-      // Update the map view to center around the user's location
       map.setView([lat, lon], 13);
-
-      // Show a popup at the user's location
       popup
         .setLatLng([lat, lon])
         .setContent("You are here: " + lat + ", " + lon)
