@@ -101,13 +101,13 @@ function getLocation() {
       nearestCampsList.innerHTML = "";
       campsWithDistance.forEach((camp) => {
         const campElement = document.createElement("div");
-        campElement.className = "bg-gray-200 rounded-md text-black text-xs";
+        campElement.className = "bg-gray-200 rounded-md text-black";
         campElement.innerHTML = `
-          <div class="font-semibold">${camp.name}</div>
-          <div class="text-sm">দূরত্ব: ${camp.distance.toFixed(
+          <div class="font-semibold text-sm">${camp.name}</div>
+          <div class="text-xs">দূরত্ব: ${camp.distance.toFixed(
             2
           )} কিলোমিটার</div>
-          <div class="text-sm">যোগাযোগ: ${camp.contacts.join(", ")}</div>
+          <div class="text-xs">যোগাযোগ: ${camp.contacts.join(", ")}</div>
         `;
         nearestCampsList.appendChild(campElement);
       });
