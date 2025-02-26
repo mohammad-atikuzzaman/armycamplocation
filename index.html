@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Army Camp Location and Contact</title>
-    <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -20,10 +20,10 @@
   </head>
   <body class="body bg-gray-100">
     <h1
-      class="bg-[#00674C] px-4 py-2 font-semibold text-3xl uppercase text-center border-b-2 border-white text-white"
+      class="bg-[#00674C] px-4 py-2 font-semibold text-lg md:text-xl lg:text-3xl uppercase text-center border-b-2 border-white text-white"
     >
       বাংলাদেশ সেনাবাহিনী ক্যাম্প এর লোকেশান এবং কন্টাক্ট নাম্বার
-    </h1> 
+    </h1>
     <main class="flex flex-col md:flex-row">
       <aside
         class="bg-[#00674C] w-full md:w-[20%] flex flex-col items-center pt-4 border-b-2 md:border-r-4 border-white p-4"
@@ -35,15 +35,19 @@
           Find My Location
         </button>
         <h3
-          class="md:mt-10 uppercase font-semibold text-lg border-b-2 text-white text-center"
+          class="uppercase font-semibold border-b-2 text-white text-center"
         >
-          My Location:
+         আমার লোকেশান 
         </h3>
-        <p id="locationContainer" class="text-center mt-2 text-white">
-         নিজের লোকেশান পেতে Find my location বাটন এ ক্লিক করুন ! 
+        <p id="locationContainer" class="text-center mt-2 text-white text-xs">
+          নিজের লোকেশান পেতে Find my location বাটন এ ক্লিক করুন !
         </p>
+        <h3 class="mt-2 md:mt-4 uppercase font-semibold border-b-2 text-white text-center">
+          নিকটস্থ ৫ টি সেনা ক্যাম্প:
+        </h3>
+        <div id="nearestCampsList" class="text-center mt-2 text-white space-y-2"></div>
       </aside>
-      <div id="map" class="h-[60vh] md:h-screen w-full"></div>
+      <div id="map" class="min-h-[60vh] md:h-screen w-full"></div>
     </main>
     <script src="./app.js"></script>
   </body>
