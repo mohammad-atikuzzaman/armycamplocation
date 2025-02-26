@@ -43,10 +43,8 @@ const armyCamps = async () => {
   });
 };
 
-// Call the function to load camps
 armyCamps();
 
-// Function to calculate distance between two coordinates (Haversine formula)
 function calculateDistance(lat1, lon1, lat2, lon2) {
   const R = 6371; // Earth radius in km
   const dLat = ((lat2 - lat1) * Math.PI) / 180;
@@ -58,17 +56,16 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
       Math.sin(dLon / 2) *
       Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c; // Distance in km
+  return R * c;
 }
 
-// Function to get user's location and display nearest camps with contact numbers
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
 
-      // Update location container with user's address
       var url = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`;
       fetch(url)
         .then((response) => response.json())
@@ -84,11 +81,9 @@ function getLocation() {
           console.error("Error retrieving location:", error);
         });
 
-      // Update map view and circle position
       circle.setLatLng([lat, lon]);
       map.setView([lat, lon], 13);
 
-      // Calculate nearest 5 camps
       const campsWithDistance = allCamps
         .map((camp) => ({
           ...camp,
@@ -97,7 +92,6 @@ function getLocation() {
         .sort((a, b) => a.distance - b.distance)
         .slice(0, 5);
 
-      // Display nearest camps in the sidebar with contact numbers
       nearestCampsList.innerHTML = "";
       campsWithDistance.forEach((camp) => {
         const campElement = document.createElement("div");
@@ -117,6 +111,5 @@ function getLocation() {
   }
 }
 
-// Add event listener to the button
 const btn = document.getElementById("btn");
 btn.addEventListener("click", getLocation);
