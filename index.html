@@ -19,11 +19,12 @@
     ></script>
   </head>
   <body class="body bg-gray-100">
-    <h1
+    <section
       class="bg-[#00674C] px-4 py-2 font-semibold text-lg md:text-xl lg:text-3xl uppercase text-center border-b-2 border-white text-white"
     >
-      বাংলাদেশ সেনাবাহিনী ক্যাম্প এর লোকেশান এবং কন্টাক্ট নাম্বার
-    </h1>
+      <h1>বাংলাদেশ সেনাবাহিনী ক্যাম্প এর লোকেশান এবং কন্টাক্ট নাম্বার</h1>
+      <a class="text-xs underline" href="https://atikuzzaman.vercel.app/">Developed by Mohammad Akash</a>
+    </section>
     <main class="flex flex-col md:flex-row">
       <aside
         class="bg-[#00674C] w-full md:w-[20%] flex flex-col items-center pt-4 border-b-2 md:border-r-4 border-white p-4"
@@ -34,18 +35,21 @@
         >
           Find My Location
         </button>
-        <h3
-          class="uppercase font-semibold border-b-2 text-white text-center"
-        >
-         আমার লোকেশান 
+        <h3 class="uppercase font-semibold border-b-2 text-white text-center">
+          আমার লোকেশান
         </h3>
         <p id="locationContainer" class="text-center mt-2 text-white text-xs">
           নিজের লোকেশান পেতে Find my location বাটন এ ক্লিক করুন !
         </p>
-        <h3 class="mt-2 md:mt-4 font-semibold border-b-2 text-white text-center">
+        <h3
+          class="mt-2 md:mt-4 font-semibold border-b-2 text-white text-center"
+        >
           নিকটস্থ ৫ টি সেনা ক্যাম্প:
         </h3>
-        <div id="nearestCampsList" class="text-center mt-2 text-white w-full grid grid-cols-2 md:grid-cols-1 gap-2 "></div>
+        <div
+          id="nearestCampsList"
+          class="text-center mt-2 text-white w-full grid grid-cols-2 md:grid-cols-1 gap-2"
+        >নিজের লোকেশান পেতে Find my location বাটন এ ক্লিক করুন !</div>
       </aside>
       <div id="map" class="min-h-[60vh] md:min-h-screen w-full"></div>
     </main>
