@@ -97,7 +97,7 @@ function getLocation() {
         const campElement = document.createElement("div");
         campElement.className = "bg-gray-200 rounded-md text-black";
         campElement.innerHTML = `
-          <div class="font-semibold text-sm">${camp.name}</div>
+          <div class="font-semibold">${camp.name}</div>
           <div class="text-xs">দূরত্ব: ${camp.distance.toFixed(
             2
           )} কিলোমিটার</div>
